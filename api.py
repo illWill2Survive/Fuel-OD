@@ -9,8 +9,8 @@ class CarDataResource(ModelResource):
         allowed_methods = ['get']
 
 
-class ModelResource(ModelResource):
+class MakeResource(ModelResource):
     class Meta:
-        queryset = Vehicle.objects.vaules("model").distinct()
-        resource_name = 'model'
+        queryset = Vehicle.objects.distinct('make')
+        resource_name = 'make'
         allowed_methods = ['get']

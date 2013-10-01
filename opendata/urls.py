@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from api import CarDataResource
-from api import ModelResource
+from api import MakeResource
 from django.contrib import admin
 
 admin.autodiscover()
@@ -9,7 +9,7 @@ admin.autodiscover()
 #v1_api.register(CarDataResource())
 
 cardata_resource= CarDataResource()
-model_resource= ModelResource()
+make_resource= MakeResource()
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,6 +18,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(cardata_resource.urls)),
-    url(r'^api/model', include(model_resource.urls)),
+    url(r'^make/', include(make_resource.urls)),
 
 )
