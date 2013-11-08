@@ -18,16 +18,6 @@ class HighwayMPGResource(ModelResource):
             include_absolute_url = False
             filtering ={'year': ALL}
 
-class FuelMPGResource(ModelResource):
-        class Meta:
-            fields =["make", "model", "year", "UHighway"]
-            queryset = dataset
-            resource_name= 'Fuel'
-            allowed_methods = ['get']
-            include_resource_uri = False
-            include_absolute_url = False
-            filtering ={'year': ALL}
-
 class CityMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
