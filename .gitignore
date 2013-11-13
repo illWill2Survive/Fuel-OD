@@ -40,3 +40,6 @@ Thumbs.db
 # 3rd party files 
 ####
 .idea/
+
+#node stuff#
+node_modules/
