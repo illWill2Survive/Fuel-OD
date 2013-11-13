@@ -17,7 +17,7 @@ app.configure(function(){
 	if(DEBUG){
 		console.log('Using local configuration');
 		app.use(express.static(path.join(__dirname, 'app')));
-		console.log('Reddit app module loaded in local configuration');
+		console.log('Fuel-OD app module loaded in local configuration');
 	} else {
 		app.use(express.static(path.join(__dirname, 'dist')));
 	}
