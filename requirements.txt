@@ -1,0 +1,4 @@
+Django==1.6
+psycopg2==2.5.1
+mimeparse==0.1.4
+python-dateutil==2.0
