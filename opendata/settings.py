@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'fuel',
     'tastypie',
-    'csvimport',
+#    'csvimport',
 )
 
 MIDDLEWARE_CLASSES = (
