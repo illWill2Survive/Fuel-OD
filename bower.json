@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs": "~2.1.9"
+    "requirejs": "~2.1.9",
+    "angular": "~1.2.x"
   }
 }
