@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
-    "express": "~3.2.*",
-    "mustache": "~0.7.*"
+    "express": "~3.2.x",
+    "mustache": "~0.7.x"
   },
   "engines": {
-    "node": ">=0.10.*"
+    "node": ">=0.10.x"
   },
   "scripts": {
     "test": "grunt test",
