@@ -1,0 +1,22 @@
+{
+  "name": "Fuel-OD",
+  "version": "0.0.0",
+  "homepage": "https://github.com/illWill2Survive/Fuel-OD",
+  "authors": [
+    "Daniel Carter <dl.carter@gmail.com>",
+    "Jaren Glover <jaren.g.glover@gmail.com>"
+  ],
+  "description": "Web app using fuel data from the open data project",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.9"
+  }
+}
