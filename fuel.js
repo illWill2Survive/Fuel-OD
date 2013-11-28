@@ -16,7 +16,7 @@ app.configure(function(){
 	//TODO handle environment configurations better
 	if(DEBUG){
 		console.log('Using local configuration');
-		app.use(express.static(path.join(__dirname, 'app')));
+		app.use(express.static(path.join(__dirname, 'public')));
 		console.log('Fuel-OD app module loaded in local configuration');
 	} else {
 		app.use(express.static(path.join(__dirname, 'dist')));

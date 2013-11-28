@@ -3,14 +3,14 @@
 */
 
 require.config({
-	baseUrl: '/js',
+	baseUrl: '/',
 	paths: {
-		'domReady' : '/bower_components/requirejs-domready'
+		'domReady' : '/bower_components/requirejs-domready/domReady',
 		'angular' : '/bower_components/angular/angular',
-		'ngRoute' : '/bower_components/angular-route'
+		'ngRoute' : '/bower_components/angular-route/angular-route'
 	},
 	shim: {
-		'angular' : {'exports' : 'angular'},
+		'angular' : { exports : 'angular'},
 		'ngRoute' : { deps:['angular']} 
 	}
 });
@@ -26,4 +26,4 @@ require([
 	console.log('application is bootstrapped');
 	});
 
-});
+}));
