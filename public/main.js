@@ -12,7 +12,10 @@ require.config({
 	shim: {
 		'angular' : { exports : 'angular'},
 		'ngRoute' : { deps:['angular']} 
-	}
+	},
+	priority: [
+		'angular'
+	]
 });
 
 require([
@@ -21,9 +24,8 @@ require([
 	'app'
 ], (function(domReady, angular, app) {
 	domReady(function() {
-	console.log('dom is ready');
-	angular.bootstrap(document, ['app']);
-	console.log('application is bootstrapped');
+		console.log('dom is ready');
+		angular.bootstrap(document, ['openDataApp']);
+		console.log('application is bootstrapped');
 	});
-
 }));

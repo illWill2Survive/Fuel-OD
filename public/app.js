@@ -7,9 +7,12 @@ define([
 	'ngRoute',
 	'js/controllers/homectrl'
 ], function(angular) {
-	return angular.module('app', ['ngRoute', 'homeCtrl'])
+	return angular.module('openDataApp', [
+		'ngRoute',
+		'homeCtrl'
+		])
 		.config(['$routeProvider', function($routeProvider) {
 			$routeProvider
-				.when('/', {controller: 'HomeController', templateUrl: '/index.html'});
+				.when('/', {controller: 'HomeController', templateUrl: '/templates/home.html'});
 		}]);
 });
