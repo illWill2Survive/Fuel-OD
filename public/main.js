@@ -6,6 +6,7 @@ require.config({
 	baseUrl: '/',
 	paths: {
 		'domReady' : '/bower_components/requirejs-domready/domReady',
+                'text' : '/bower_components/requirejs-text/requirejs-text,
 		'angular' : '/bower_components/angular/angular',
 		'ngRoute' : '/bower_components/angular-route/angular-route'
 	},
