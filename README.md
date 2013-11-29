@@ -40,5 +40,7 @@ export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
 
 ####Contributors: 
+```
 Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
-Front End Capo -> Dan Carter - @dcarter_js 	    
+Front End Capo -> Dan Carter - @dcarter_js
+``` 
