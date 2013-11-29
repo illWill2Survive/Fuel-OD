@@ -29,12 +29,12 @@ npm install [-g] bower
 ```
 pip install -r requirement_file.txt
 ```
-##syncdb
+#syncdb
 ```
 python manage.py syncdb
 ```
 
-#### Django enviroment setting - When you use Django, you have to tell it which settings you’re using. 
+## Django enviroment setting - When you use Django, you have to tell it which settings you’re using. 
 ```
 export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
