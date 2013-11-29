@@ -3,12 +3,12 @@ This is the MVP for a open data project that will display fuel economy data from
 You can find the data set at fueleconomy.gov.
 
 ###Services:
-*Year
-*Make
-*All Car Data
-*YourSaveSpend
-*HighwayMPG
-*CityMPG
+* Year
+* Make
+* All Car Data
+* YourSaveSpend
+* HighwayMPG
+* CityMPG
 
 ###Installation:
 
