@@ -22,6 +22,7 @@ npm install
 npm install [-g] bower
 ```
 
-Current Coders: 
+####Contributors: 
 Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
+
 Front End Capo -> Dan Carter - @dcarter_js 	    
