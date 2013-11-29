@@ -6,7 +6,8 @@
     "express": "~3.2.x",
     "mustache": "~0.7.x",
     "less": "~1.5.x",
-    "grunt-cli": "~0.1.x"
+    "grunt-cli": "~0.1.x",
+    "grunt": "~0.4.2"
   },
   "engines": {
     "node": ">=0.10.x"
