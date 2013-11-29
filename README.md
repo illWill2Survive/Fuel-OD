@@ -38,6 +38,11 @@ python manage.py syncdb
 ```
 export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
+#### Run Django Server on port 8732
+
+```
+python manage.py runserver 0.0.0.0:8732
+```
 
 ####Contributors: 
 ```
