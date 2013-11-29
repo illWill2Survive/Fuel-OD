@@ -10,14 +10,14 @@ YourSaveSpend
 HighwayMPG
 CityMPG
 
-##To install:
+##Installation:
 
-Install application
+####Install application
 ```
 npm install
 ```
 
-Install Bower
+####Install Bower
 ```
 npm install [-g] bower
 ```
