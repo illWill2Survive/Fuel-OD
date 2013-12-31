@@ -1,0 +1,4 @@
+bind = "ec2-54-201-146-130.us-west-2.compute.amazonaws.com:8732"
+max_request = 1000
+keep_alive = 2
+preload = True
