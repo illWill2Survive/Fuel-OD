@@ -41,6 +41,12 @@ Thumbs.db
 ####
 .idea/
 
+# python vir env
+bin/
+include/
+lib/
+local/
+
 #node stuff#
 #install node modules and bower components separately
 ############
