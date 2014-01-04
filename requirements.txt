@@ -2,3 +2,4 @@ Django==1.6
 psycopg2==2.5.1
 mimeparse
 python-dateutil==2.0
+gunicorn == 18.0
