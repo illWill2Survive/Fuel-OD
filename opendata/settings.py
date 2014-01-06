@@ -17,14 +17,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7b)bdc3qtaoz%zi8fw*r8a3n*_4!47h$l2=q8#ikk=d*^_$*lm'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False # turn off once I push to AWS
+TEMPLATE_DEBUG = False # ^^
 
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
+# When you go to proudction you need to add the host once DEBUG is set to false
+ALLOWED_HOSTS = [
+	'.jarenglover.com'
+]
 
 
 # Application definition
@@ -63,8 +65,8 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
             'NAME': 'fuel',                      # Or path to database file if using sqlite3.
             # The following settings are not used with sqlite3:
-            'USER': 'db',
-            'PASSWORD': 'G0d\'$ $0n',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
             'PORT': '5432',                      # Set to empty string for default.
         }
