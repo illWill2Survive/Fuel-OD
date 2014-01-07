@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = ')lx+1dkiz3@4!_dczc9xql87ejk)88=8%g67j1eqf6q=p9(!)*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False # turn off once I push to AWS
