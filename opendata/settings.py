@@ -90,3 +90,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Tastypie Setting
+API_LIMIT_PER_PAGE = 35 # I wanted to change the defult limit this instead of 20
