@@ -4,8 +4,6 @@ from fuel.models import Vehicle
 from django.core import serializers
 from tastypie import fields, utils
 
-#import simplejson as json
-
 dataset= Vehicle.objects.filter(fuelType1 ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08 =0).exclude(UCity =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0')
 
 
@@ -57,8 +55,6 @@ class MakeResource(ModelResource):
         queryset =Vehicle.objects.order_by('make').distinct('make')
         resource_name = 'make'
         allowed_methods = ['get']
-        #serializer = Serializer()
-        # list(queryset)
         fields = ['make']
         include_resource_uri = False
         include_absolute_url = False
