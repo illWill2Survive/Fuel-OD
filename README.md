@@ -1,58 +1,79 @@
+Fuel-OD
+==
+
 This is the MVP for a open data project that will display -> "Fuel economy data are the result of vehicle testing done at the Environmental Protection Agency's National Vehicle and Fuel Emissions Laboratory in Ann Arbor, Michigan, and by vehicle manufacturers with oversight by EPA". 
 
 You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). I personaly decided to only query data from 2011-2014, however this can be fixed via dataset variable in api.py.
 
 I am currenly hosting it at my [personal subdomain](http://fuel.jarenglover.com). 
 
-This proejct was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
+This project was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
 
-###Services:
-* Year
-* Make
-* All Car Data [via cardata]
-* YourSaveSpend
-* HighwayMPG
-* CityMPG
+Services:
+--
+ - Year
+ - Make
+ - All Car Data
+ - YourSaveSpend
+ - HighwayMPG
+ - CityMPG
 
-Please note 
-
-###Node Installation:
-
-####Install application
+Installation Instructions
+--
+Fuel-OD requires Node.js, Django and a PostgresQL database.
+### Node Setup:
+#### Install Node.js dependencies and Bower
 ```
-npm install
-```
-
-####Install Bower
-```
-npm install [-g] bower
+$ npm install
+# npm install -g bower
 ```
 
-
-###Django Installation: I recommend using virtualenv !
-
-#### Django dependancies
+### Django Setup:
+#### Install Django dependencies and export settings
 ```
-pip install -r requirement_file.txt
-```
-#####syncdb
-```
-python manage.py syncdb
+# pip install -r requirement_file.txt
+$ export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
 
-##### Django enviroment setting - When you use Django, you have to tell it which settings you’re using. 
+### Database Setup
 ```
-export DJANGO_SETTINGS_MODULE='opendata.settings'
+$ vi opendata/settings.py
 ```
-#### Run Django Server on port 8732
+#### Add security key
+```
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = ''
+```
+#### Add local PostgresQL info
+```
+DATABASES = {
+'default': {
+  'ENGINE': 'django.db.backends.postgresql_psycopg2',
+  'NAME': '',
+  'USER': '',
+  'PASSWORD': '',
+  'HOST': '',
+  'PORT': '',
+  }
+}
 
 ```
-python manage.py runserver 0.0.0.0:1234
+
+#### Sync local DB with fueleconomy.gov database
+```
+$ python manage.py syncdb
+$ python manage.py shell <parseCSV.py
 ```
 
-####Contributors: 
+Start Fuel-OD
+--
+```
+$ python manage.py runserver 0.0.0.0:8732
+```
+
+#### Contributors: 
 ```
 Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
 Front End Capo -> Dan Carter - @dcarter_js
-```
+``` 
 
