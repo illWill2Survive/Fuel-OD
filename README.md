@@ -7,7 +7,7 @@ You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/do
 
 I am currenly hosting it at my [personal subdomain](http://fuel.jarenglover.com). 
 
-This proejct was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
+This project was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
 
 Services:
 --
