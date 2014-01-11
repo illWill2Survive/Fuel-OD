@@ -13,7 +13,7 @@ class HighwayMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
             queryset = dataset
-            resource_name= 'HighwayMPG'
+            resource_name= 'highwaympg'
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
@@ -23,7 +23,7 @@ class CityMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
             queryset = dataset
-            resource_name= 'City'
+            resource_name= 'city'
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
@@ -33,7 +33,7 @@ class YouSaveSpendMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "youSaveSpend"]
             queryset = dataset
-            resource_name= 'YouSaveSpend'
+            resource_name= 'you-save-spend'
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
@@ -53,7 +53,6 @@ class CarDataResource(ModelResource):
 
 class MakeResource(ModelResource):
     make = fields.CharField(attribute='make')
-   # model=Vehicle
     class Meta:
         queryset =Vehicle.objects.order_by('make').distinct('make')
         resource_name = 'make'

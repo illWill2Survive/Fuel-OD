@@ -17,15 +17,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')lx+1dkiz3@4!_dczc9xql87ejk)88=8%g67j1eqf6q=p9(!)*'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # turn off once I push to AWS
+DEBUG = False   # turn off once I push to AWS
 TEMPLATE_DEBUG = False # ^^
 
 # When you go to proudction you need to add the host once DEBUG is set to false
 ALLOWED_HOSTS = [
-	'.jarenglover.com'
+	'.jarenglover.com' # in Production django restricts the host that can access your app 
 ]
 
 
