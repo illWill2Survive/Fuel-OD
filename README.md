@@ -2,7 +2,7 @@ This is the MVP for a open data project that will display -> "Fuel economy data 
 
 You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). I personaly decided to only query data from 2011-2014, however this can be fixed via dataset variable in api.py.
 
-I am currenly hosting it at my [personal subdomain](http://www.fuel.jarenglover.com). 
+I am currenly hosting it at my [personal subdomain](http://fuel.jarenglover.com). 
 
 This proejct was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
 
