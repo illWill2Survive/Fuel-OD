@@ -25,7 +25,7 @@ TEMPLATE_DEBUG = False # ^^
 
 # When you go to proudction you need to add the host once DEBUG is set to false
 ALLOWED_HOSTS = [
-	'.jarenglover.com' # in Production django restricts the host that can access your app 
+	'*' # in Production django restricts the host that can access your app 
 ]
 
 
