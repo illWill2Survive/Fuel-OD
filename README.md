@@ -6,9 +6,9 @@ Fuel-OD
 
 This is the MVP for a open data project that will display -> "Fuel economy data are the result of vehicle testing done at the Environmental Protection Agency's National Vehicle and Fuel Emissions Laboratory in Ann Arbor, Michigan, and by vehicle manufacturers with oversight by EPA". 
 
-You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). I personaly decided to only query data from 2011-2014, however this can be fixed via dataset variable in api.py.
+You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). Currently only querying data from 2011-2014, however this can be fixed via dataset variable in api.py.
 
-I am currenly hosting it at my [personal subdomain](http://fuel.jarenglover.com). 
+Currently hosted at one of our [personal subdomains](http://fuel.jarenglover.com). 
 
 This project was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
 
@@ -24,20 +24,30 @@ Services:
 Installation Instructions
 --
 Fuel-OD requires Node.js, Django and a PostgresQL database.
-### Node Setup:
-#### Install Node.js dependencies and Bower
-```
-$ npm install
-# npm install -g bower
-```
 
-### Django Setup:
+## Node Setup:
+--
+#### Install Node.js global dependencies
+```
+npm install -g grunt
+npm install -g grunt-cli
+npm install -g bower
+```
+#### Install Node.js dependencies
+```
+npm install
+```
+#### Install bower dependencies
+```
+bower install
+```
+## Django Setup:
+--
 #### Install Django dependencies and export settings
 ```
 # pip install -r requirement_file.txt
 $ export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
-
 ### Database Setup
 ```
 $ vi opendata/settings.py
@@ -61,17 +71,36 @@ DATABASES = {
 }
 
 ```
-
 #### Sync local DB with fueleconomy.gov database
 ```
 $ python manage.py syncdb
 $ python manage.py shell <parseCSV.py
 ```
+Start node server
+--
+```
+npm start
+```
 
-Start Fuel-OD
+Start django development server
 --
 ```
 $ python manage.py runserver 0.0.0.0:8732
+```
+
+
+## Build tasks
+--
+#### In node
+```
+#run browserify
+grunt browserify
+
+#run jshint
+grunt jshint
+
+#run default grunt task
+grunt
 ```
 
 #### Contributors: 
