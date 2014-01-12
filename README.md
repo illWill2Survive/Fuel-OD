@@ -26,7 +26,6 @@ Installation Instructions
 Fuel-OD requires Node.js, Django and a PostgresQL database.
 
 ## Node Setup:
---
 #### Install Node.js global dependencies
 ```
 npm install -g grunt
@@ -42,7 +41,6 @@ npm install
 bower install
 ```
 ## Django Setup:
---
 #### Install Django dependencies and export settings
 ```
 # pip install -r requirement_file.txt
@@ -90,7 +88,6 @@ $ python manage.py runserver 0.0.0.0:8732
 
 
 ## Build tasks
---
 #### In node
 ```
 #run browserify
