@@ -13,5 +13,5 @@ install:
   - pip install -r requirements.txt --use-mirrors
 
 # command to run tests
-# Removed test 
+script: nosetests test_me.py
 
