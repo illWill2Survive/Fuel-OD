@@ -77,3 +77,5 @@ Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
 Front End Capo -> Dan Carter - @dcarter_js
 ``` 
 
+[![Build Status](https://travis-ci.org/mchiodo/Fuel-OD.png?branch=master)](https://travis-ci.org/mchiodo/Fuel-OD)
+
