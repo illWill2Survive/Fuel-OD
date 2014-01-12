@@ -1,26 +1,27 @@
 {
-  "name": "Fuel-OD",
-  "version": "0.0.0",
-  "homepage": "https://github.com/illWill2Survive/Fuel-OD",
+  "name": "SampleApp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dcartertwo/gulp-angular-browserify-seed",
   "authors": [
-    "Daniel Carter <dl.carter@gmail.com>",
-    "Jaren Glover <jaren.g.glover@gmail.com>"
+    "Dan Carter"
   ],
-  "description": "Web app using fuel data from the open data project",
+  "description": "A sample app using gulp, angular, browserify, and bower",
+  "dependencies": {
+    "angular": "1.2.8",
+    "angular-route": "1.2.8"
+  },
+  "keywords": [
+    "gulp",
+    "angular",
+    "browserify"
+  ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "app/bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "requirejs": "~2.1.9",
-    "requirejs-domready": "~2.0.x",
-    "requirejs-text": "~2.0.x",
-    "angular": "~1.2.x",
-    "angular-route": "~1.2.x"
-  }
+  ]
 }
