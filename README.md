@@ -100,7 +100,7 @@ grunt jshint
 grunt
 ```
 
-#### Contributors: 
+#### Project Team: 
 ```
 Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
 Front End Capo -> Dan Carter - @dcarter_js
