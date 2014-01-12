@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				//define the files to lint
 				files: [
 					'Gruntfile.js',
-					'public/**/*.js',
+					'app/js/app.js',
 					'test/**/*.js',
 					'!**/tests/**',
 					'!node_modules',
@@ -20,6 +20,7 @@ module.exports = function(grunt) {
 						jshintrc: '.jshintrc'	
 					}
 			},
+			clean: ["./app/js/app.js"],
 			browserify: {
 			  dist: {
 			    files: {
@@ -36,7 +37,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.registerTask('test', ['jshint']);
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['browserify', 'jshint']);
 };
