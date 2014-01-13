@@ -43,6 +43,9 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware', #next three lines where added for redis    # This middleware must be first on the list
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +58,19 @@ ROOT_URLCONF = 'opendata.urls'
 
 WSGI_APPLICATION = 'opendata.wsgi.application'
 
+# CACHE  - Redis socket
+
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': '/var/run/redis/redis.sock',
+    },
+}
+
+# config redis as the session engine 
+
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = '/var/run/redis/redis.sock'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -64,13 +80,14 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
             'NAME': '',                      # Or path to database file if using sqlite3.
-            # The following settings are not used with sqlite3:
+            					# The following settings are not used with sqlite3:
             'USER': '',
             'PASSWORD': '',
             'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
             'PORT': '5432',                      # Set to empty string for default.
         }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
