@@ -1,58 +1,108 @@
+Fuel-OD
+==
+
+[![Build Status](https://travis-ci.org/mchiodo/Fuel-OD.png?branch=master)](https://travis-ci.org/mchiodo/Fuel-OD)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
 This is the MVP for a open data project that will display -> "Fuel economy data are the result of vehicle testing done at the Environmental Protection Agency's National Vehicle and Fuel Emissions Laboratory in Ann Arbor, Michigan, and by vehicle manufacturers with oversight by EPA". 
 
-You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). I personaly decided to only query data from 2011-2014, however this can be fixed via dataset variable in api.py.
+You can find the data set at [fueleconomy.gov](http://www.fueleconomy.gov/feg/download.shtml). Currently only querying data from 2011-2014, however this can be fixed via dataset variable in api.py.
 
-I am currenly hosting it at my [personal subdomain](http://fuel.jarenglover.com). 
+Currently hosted at one of our [personal subdomains](http://fuel.jarenglover.com). 
 
-This proejct was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
+This project was great at teaching what it takes to host a web app. This included a stack from the OS up to REST API. 
 
-###Services:
-* Year
-* Make
-* All Car Data [via cardata]
-* YourSaveSpend
-* HighwayMPG
-* CityMPG
+Services:
+--
+ - Year
+ - Make
+ - All Car Data
+ - YourSaveSpend
+ - HighwayMPG
+ - CityMPG
 
-Please note 
+Installation Instructions
+--
+Fuel-OD requires Node.js, Django and a PostgresQL database.
 
-###Node Installation:
-
-####Install application
+## Node Setup:
+#### Install Node.js global dependencies
+```
+npm install -g grunt
+npm install -g grunt-cli
+npm install -g bower
+```
+#### Install Node.js dependencies
 ```
 npm install
 ```
+#### Install bower dependencies
+```
+bower install
+```
+## Django Setup:
+#### Install Django dependencies and export settings
+```
+# pip install -r requirement_file.txt
+$ export DJANGO_SETTINGS_MODULE='opendata.settings'
+```
+### Database Setup
+```
+$ vi opendata/settings.py
+```
+#### Add security key
+```
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = ''
+```
+#### Add local PostgresQL info
+```
+DATABASES = {
+'default': {
+  'ENGINE': 'django.db.backends.postgresql_psycopg2',
+  'NAME': '',
+  'USER': '',
+  'PASSWORD': '',
+  'HOST': '',
+  'PORT': '',
+  }
+}
 
-####Install Bower
 ```
-npm install [-g] bower
+#### Sync local DB with fueleconomy.gov database
+```
+$ python manage.py syncdb
+$ python manage.py shell <parseCSV.py
+```
+Start node server
+--
+```
+npm start
+```
+
+Start django development server
+--
+```
+$ python manage.py runserver 0.0.0.0:8732
 ```
 
 
-###Django Installation: I recommend using virtualenv !
+## Build tasks
+#### In node
+```
+#run browserify
+grunt browserify
 
-#### Django dependancies
-```
-pip install -r requirement_file.txt
-```
-#####syncdb
-```
-python manage.py syncdb
-```
+#run jshint
+grunt jshint
 
-##### Django enviroment setting - When you use Django, you have to tell it which settings you’re using. 
-```
-export DJANGO_SETTINGS_MODULE='opendata.settings'
-```
-#### Run Django Server on port 8732
-
-```
-python manage.py runserver 0.0.0.0:1234
+#run default grunt task
+grunt
 ```
 
-####Contributors: 
+#### Project Team: 
 ```
 Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
 Front End Capo -> Dan Carter - @dcarter_js
-```
+``` 
 

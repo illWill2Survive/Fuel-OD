@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				//define the files to lint
 				files: [
 					'Gruntfile.js',
-					'public/**/*.js',
+					'app/js/app.js',
 					'test/**/*.js',
 					'!**/tests/**',
 					'!node_modules',
@@ -20,38 +20,13 @@ module.exports = function(grunt) {
 						jshintrc: '.jshintrc'	
 					}
 			},
-			requirejs: {
-				compile: {
-					options: {
-						appDir: 'public/',
-						baseUrl: './js',
-						dir: './public/build/js',
-						paths: {
-							angular: '../bower_components/angular/angular',
-							ngRoute: '../bower_components/angular-route/angular-route',
-							domReady: '../bower_components/requirejs-domready/domReady',
-							text: '../bower_components/requirejs-text/text'
-						},
-						shim: {
-							angular: {exports: 'angular'},
-							ngRoute: {deps: ['angular']}
-						},
-						priority: [
-							'angular'
-						],
-						locale: 'en-us',
-						optimize: 'uglify2',
-						generateSourceMaps: true,
-						preserveLicenseComments: false,
-						inlineText: true,
-						modules: [
-							{
-								name: 'app'
-							}
-						],
-						stubModules: ['text']
-					}
-				}
+			clean: ["./app/js/app.js"],
+			browserify: {
+			  dist: {
+			    files: {
+			      'app/js/app.js': ['app/app/app.js']
+			    }
+			  }
 			},
 			watch: {
 				files: ['<%= jshint.files %>'],
@@ -60,10 +35,11 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	grunt.registerTask('test', ['jshint']);
-	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('build', ['requirejs:compile']);
+	grunt.registerTask('default', ['browserify', 'jshint']);
 };
