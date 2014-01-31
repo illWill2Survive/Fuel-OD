@@ -11,7 +11,7 @@ class HighwayMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
             queryset = dataset
-            resource_name= 'highwaympg'
+            resource_name= 'highway'
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
@@ -19,7 +19,7 @@ class HighwayMPGResource(ModelResource):
 
 class CityMPGResource(ModelResource):
         class Meta:
-            fields =["make", "model", "year", "UHighway"]
+            fields =["make", "model", "year", "UCity"]
             queryset = dataset
             resource_name= 'city'
             allowed_methods = ['get']
@@ -62,7 +62,7 @@ class MakeResource(ModelResource):
 
 class YearResource(ModelResource):
     class Meta:
-        queryset =Vehicle.objects.order_by('year').distinct('year')
+        queryset =dataset #Vehicle.objects.order_by('year').distinct('year')
         resource_name = 'year'
         allowed_methods = ['get']
         fields = ['year']
