@@ -50,7 +50,6 @@ class CarDataResource(ModelResource):
 
 
 class MakeResource(ModelResource):
-    make = fields.CharField(attribute='make')
     class Meta:
         queryset =Vehicle.objects.order_by('make').distinct('make')
         resource_name = 'make'
