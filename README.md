@@ -25,6 +25,24 @@ Installation Instructions
 --
 Fuel-OD requires Node.js, Django and a PostgresQL database.
 
+
+### Create a virtual envs [ if you don't have pip i feel bad for you son, use it to down load virtual env] activate it!
+```
+virtualenv env
+``` 
+
+## Django Setup:
+
+#### Install Django dependencies and export settings
+```
+# pip install -r requirement_file.txt
+$ export DJANGO_SETTINGS_MODULE='opendata.settings'
+```
+### set up node virtual env [P.S. take a while]
+```
+nodeenv -vp
+```
+
 ## Node Setup:
 #### Install Node.js global dependencies
 ```
@@ -39,12 +57,6 @@ npm install
 #### Install bower dependencies
 ```
 bower install
-```
-## Django Setup:
-#### Install Django dependencies and export settings
-```
-# pip install -r requirement_file.txt
-$ export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
 ### Database Setup
 ```
@@ -72,7 +84,7 @@ DATABASES = {
 #### Sync local DB with fueleconomy.gov database
 ```
 $ python manage.py syncdb
-$ python manage.py shell <parseCSV.py
+$ python manage.py shell < parseCSV.py
 ```
 Start node server
 --
