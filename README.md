@@ -26,9 +26,10 @@ Installation Instructions
 Fuel-OD requires Node.js, Django and a PostgresQL database.
 
 
-#### Create a virtual envs [ if you don't have pip i feel bad for you son, use it to down load virtual env] activate it!
+#### Create a python virtual env
 ```
 virtualenv env
+source env/bin/activate 
 ``` 
 
 ## Django Setup:
@@ -40,24 +41,9 @@ $ export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
 ### set up node virtual env [P.S. take a while]
 ```
-nodeenv -vp
+nodeenv -vp      # the '-p' allows for nodeeenv to be attached to your virtualenv 
 ```
 
-## Node Setup:
-#### Install Node.js global dependencies
-```
-npm install -g grunt
-npm install -g grunt-cli
-npm install -g bower
-```
-#### Install Node.js dependencies
-```
-npm install
-```
-#### Install bower dependencies
-```
-bower install
-```
 ### Database Setup
 ```
 $ vi opendata/settings.py
@@ -81,10 +67,26 @@ DATABASES = {
 }
 
 ```
-#### Sync local DB with fueleconomy.gov database
+#### Sync local DB & add open data from fueleconomy.gov
 ```
 $ python manage.py syncdb
 $ python manage.py shell < parseCSV.py
+```
+
+## Node Setup:
+#### Install Node.js global dependencies
+```
+npm install -g grunt
+npm install -g grunt-cli
+npm install -g bower
+```
+#### Install Node.js dependencies
+```
+npm install
+```
+#### Install bower dependencies
+```
+bower install
 ```
 Start node server
 --
@@ -118,3 +120,4 @@ Back End OG -->Jaren Glover - @GloveDotcom - www.JarenGlover.com
 Front End Capo -> Dan Carter - @dcarter_js
 ``` 
 
+##Pull request welcome  :] 
