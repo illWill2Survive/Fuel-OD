@@ -51,9 +51,6 @@ class CarDataResource(ModelResource):
         include_absolute_url = False
 	ordering = ['make']
 
-
-
-
 class MakeResource(ModelResource):
     make = fields.CharField(attribute='make')
     class Meta:
