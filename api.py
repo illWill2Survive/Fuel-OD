@@ -16,6 +16,7 @@ class HighwayMPGResource(ModelResource):
             include_resource_uri = False
             include_absolute_url = False
             filtering ={'year': ALL}
+            ordering = ['make']
 
 class CityMPGResource(ModelResource):
         class Meta:
@@ -26,6 +27,7 @@ class CityMPGResource(ModelResource):
             include_resource_uri = False
             include_absolute_url = False
             filtering ={'year': ALL}
+            ordering = ['make']
 
 class YouSaveSpendMPGResource(ModelResource):
         class Meta:
@@ -36,6 +38,7 @@ class YouSaveSpendMPGResource(ModelResource):
             include_resource_uri = False
             include_absolute_url = False
             filtering ={'year': ALL}
+            ordering = ['model']
 
 class CarDataResource(ModelResource):
     class Meta:
