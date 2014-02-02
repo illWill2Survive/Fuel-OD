@@ -49,10 +49,9 @@ class CarDataResource(ModelResource):
         allowed_methods = ['get']
         include_resource_uri = False
         include_absolute_url = False
-	ordering = ['make']
+	    ordering = ['make']
 
 class MakeResource(ModelResource):
-    make = fields.CharField(attribute='make')
     class Meta:
         queryset =Vehicle.objects.order_by('make').distinct('make')
         resource_name = 'make'
