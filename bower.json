@@ -7,8 +7,10 @@
   ],
   "description": "A sample app using gulp, angular, browserify, and bower",
   "dependencies": {
-    "angular": "1.2.8",
-    "angular-route": "1.2.8"
+    "angular": "1.2.11",
+    "angular-route": "1.2.11",
+    "bootstrap": "3.1.0",
+    "angular-bootstrap": "0.10.0"
   },
   "keywords": [
     "gulp",
