@@ -110,6 +110,9 @@ grunt browserify
 #run jshint
 grunt jshint
 
+#minify javascript
+grunt uglify
+
 #run default grunt task
 grunt
 ```
