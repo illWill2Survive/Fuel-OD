@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 					'!bower_components'
 					],
 				options: {
-					//TODO add jshintrc file
+					    //TODO add jshintrc file
 						jshintrc: '.jshintrc'	
 					}
 			},
@@ -28,17 +28,32 @@ module.exports = function(grunt) {
 			    }
 			  }
 			},
+			uglify: {
+			  options: {
+			    // the banner is inserted at the top of the output
+			    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+			    sourceMap: 'app/app/app.map.js',
+			    sourceMapRoot: 'app/app/app.js', // the location to find your original source
+			  },
+			  dist: {
+			    files: {
+			      'app/app/app.min.js': ['app/app/app.js']
+			    }
+			  }
+			},
 			watch: {
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint']
 			}
 	});
 
+	//TODO add bower-resolve for angular libraries
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('test', ['jshint']);
 	grunt.registerTask('default', ['browserify', 'jshint']);
