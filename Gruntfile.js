@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 					'!bower_components'
 					],
 				options: {
-					//TODO add jshintrc file
+					    //TODO add jshintrc file
 						jshintrc: '.jshintrc'	
 					}
 			},
