@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			browserify: {
 			  dist: {
 			    files: {
-			      'app/js/app.js': ['app/app/app.js']
+			      'app/js/app.js': ['app/app/*.js']
 			    }
 			  }
 			},
@@ -37,12 +37,12 @@ module.exports = function(grunt) {
 			  options: {
 			    // the banner is inserted at the top of the output
 			    banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
-			    sourceMap: 'app/app/app.map.js',
-			    sourceMapRoot: 'app/app/app.js', // the location to find your original source
+			    sourceMap: true,
+			    preserveComments: false
 			  },
 			  dist: {
 			    files: {
-			      'app/app/app.min.js': ['app/app/app.js']
+			      'app/js/app.min.js': ['app/js/app.js']
 			    }
 			  }
 			},
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 				},
 				sass: {
 					files: ['<%= sass.files %>'],
-					tasks['sass']
+					tasks:['sass']
 				}
 			}
 	});
