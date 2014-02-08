@@ -41,6 +41,22 @@ module.exports = function(grunt) {
 			    }
 			  }
 			},
+			sass: {
+				dist: {
+					options: {
+						style: 'expanded',
+						sourcemap: 'true',
+						lineNumbers: 'true',
+
+					},
+					files: [{
+						expand: true,
+						src: ['app/css/*.scss'],
+						dest: 'app/css',
+						ext: '.css'
+					}]
+				}
+			}
 			watch: {
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint']
@@ -54,7 +70,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask('test', ['jshint']);
-	grunt.registerTask('default', ['clean','browserify','jshint', 'uglify']);
+	grunt.registerTask('default', ['clean','browserify','jshint', 'uglify', 'sass']);
 };
