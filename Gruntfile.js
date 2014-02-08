@@ -50,21 +50,26 @@ module.exports = function(grunt) {
 				dist: {
 					options: {
 						style: 'expanded',
-						sourcemap: 'true',
 						lineNumbers: 'true',
 
 					},
 					files: [{
 						expand: true,
 						src: ['app/css/*.scss'],
-						dest: 'app/css',
+						dest: './',
 						ext: '.css'
 					}]
 				}
 			},
 			watch: {
-				files: ['<%= jshint.files %>'],
-				tasks: ['jshint']
+				hint:{
+					files: ['<%= jshint.files %>'],
+					tasks: ['jshint']
+				},
+				sass: {
+					files: ['<%= sass.files %>'],
+					tasks['sass']
+				}
 			}
 	});
 

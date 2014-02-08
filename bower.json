@@ -1,7 +1,7 @@
 {
   "name": "OpenFuelApp",
   "version": "0.0.1",
-  "homepage": "https://github.com/dcartertwo/gulp-angular-browserify-seed",
+  "homepage": "https://github.com/illWill2Survive/Fuel-OD",
   "authors": [
     "Dan Carter"
   ],
@@ -11,10 +11,10 @@
     "angular-route": "1.2.11",
     "bootstrap": "3.1.0",
     "angular-bootstrap": "0.10.0",
-    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#~3.1.0"
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#3.1.0"
   },
   "keywords": [
-    "gulp",
+    "grunt",
     "angular",
     "browserify"
   ],
