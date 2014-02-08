@@ -28,6 +28,11 @@ module.exports = function(grunt) {
 			    }
 			  }
 			},
+			browserifyBower: {
+				options: {
+					file: './app/js/lib.js'
+				}
+			},
 			uglify: {
 			  options: {
 			    // the banner is inserted at the top of the output
@@ -56,7 +61,7 @@ module.exports = function(grunt) {
 						ext: '.css'
 					}]
 				}
-			}
+			},
 			watch: {
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint']
@@ -71,6 +76,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-browserify-bower');
 
 	grunt.registerTask('test', ['jshint']);
 	grunt.registerTask('default', ['clean','browserify','jshint', 'uglify', 'sass']);
