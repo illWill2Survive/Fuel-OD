@@ -104,6 +104,9 @@ $ python manage.py runserver 0.0.0.0:8732
 ## Build tasks
 #### In node
 ```
+#convert bower libraries to CommonJS modules
+grunt browserifyBower
+
 #run browserify
 grunt browserify
 
