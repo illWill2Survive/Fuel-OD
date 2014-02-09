@@ -18,7 +18,7 @@ API="tastypie"
 echo "Starting $NAME as `whoami`"
 
 #check if if used updated DB stuff
-echo "Press 'Y' if you have updated your Database information, followed by
+echo "Press 'Y' if you have updated your Database information, followed by \
 [ENTER]" 
 read answer 
 
