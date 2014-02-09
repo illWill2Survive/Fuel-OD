@@ -17,6 +17,19 @@ API="tastypie"
 #echo `pwd`
 echo "Starting $NAME as `whoami`"
 
+#check if if used updated DB stuff
+echo "Press 'Y' if you have updated your Database information, followed by
+[ENTER]" 
+read answer 
+
+    if [ ! "$command" == "Y" ] || [ ! "$command" == "y" ]; then
+        exit 187   
+    fi 
+#kill gunicorn if running 
+pkill gunicorn 
+
+# Activate the virtual environment
+cd $DJANGODIR
 source ${VIRENV}/bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE #set the django model 
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH  		#add django dir to python path
@@ -37,9 +50,7 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-file=$LOGFILE \
   --config=$SOCKFILE 2>> $LOGFILE  
 
-'''# Activate the virtual environment
-cd $DJANGODIR
-if [ ! -d $API ]; then
+'''if [ ! -d $API ]; then
     echo "Type \"Y\" to auto download Tastypie artifacts , followed by [ENTER]:"
     read command 
 
