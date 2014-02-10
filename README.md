@@ -23,7 +23,7 @@ Services:
 
 Installation Instructions
 --
-Fuel-OD requires Node.js, Django and a PostgresQL database.
+Fuel-OD requires Node.js, Ruby, Django and a PostgresQL database.
 
 
 #### Create a python virtual env
@@ -73,6 +73,12 @@ $ python manage.py syncdb
 $ python manage.py shell < parseCSV.py
 ```
 
+Start django development server
+--
+```
+$ python manage.py runserver 0.0.0.0:8732
+```
+
 ## Node Setup:
 #### Install Node.js global dependencies
 ```
@@ -88,22 +94,25 @@ npm install
 ```
 bower install
 ```
+
 Start node server
 --
 ```
 npm start
 ```
 
-Start django development server
---
+##Sass setup:
+#### This project uses Sass, which has Ruby and Ruby gems as a requirement.  After installing ruby and ruby gems you can use the following command to install Sass:
 ```
-$ python manage.py runserver 0.0.0.0:8732
+gem install sass
 ```
-
 
 ## Build tasks
 #### In node
 ```
+#compile css
+grunt sass
+
 #convert bower libraries to CommonJS modules
 grunt browserifyBower
 
