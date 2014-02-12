@@ -54,7 +54,11 @@ class CarDataResource(ModelResource):
 
 class MakeResource(ModelResource):
     class Meta:
-        queryset =Vehicle.objects.order_by('make').distinct('make')
+        queryset = Vehicle.objects.filter(fuelType1
+                ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08
+                        =0).exclude(UCity
+                                =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0').order_by('make')
+
         resource_name = 'make'
         allowed_methods = ['get']
         fields = ['make']
@@ -64,7 +68,10 @@ class MakeResource(ModelResource):
 
 class YearResource(ModelResource):
     class Meta:
-        queryset =dataset #Vehicle.objects.order_by('year').distinct('year')
+        queryset = Vehicle.objects.filter(fuelType1
+                ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08
+                        =0).exclude(UCity
+                                =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0').order_by('year')
         resource_name = 'year'
         allowed_methods = ['get']
         fields = ['year']
