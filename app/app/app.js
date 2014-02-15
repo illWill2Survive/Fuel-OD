@@ -13,10 +13,10 @@ angular.module('sampleApp', [
                 templateUrl: '/app/templates/home.html', 
                 controller: 'MainCtrl'
             })
-            // .when('/about'), {
-            //     templateUrl: '/app/templates/about.html',
-            //     controller:'AboutCtrl'
-            // }
+            .when('/about'), {
+                 templateUrl: '/app/templates/about.html',
+                 controller:'AboutCtrl'
+            }
             .otherwise( 
                 {
                     redirectTo: '/'
