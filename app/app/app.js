@@ -2,6 +2,7 @@ require('angular/angular');
 require('angular-route/angular-route');
 require('./bootstrap');
 var mainctrl = require('./mainctrl');
+var aboutctrl = require('./aboutctrl');
 
 //Declare app level module and dependencies
 angular.module('sampleApp', [
@@ -25,4 +26,4 @@ angular.module('sampleApp', [
 
 //Load controller(s)
 angular.module('sampleApp').controller('MainCtrl', ['$scope', mainctrl.MainController]);    
-   
+angular.module('sampleApp').controller('AboutCtrl', ['$scope', aboutctrl.AboutController]);
