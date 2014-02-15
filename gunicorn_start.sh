@@ -19,14 +19,17 @@ echo "Starting $NAME as `whoami`"
 echo "Press 'Y' if you have updated your Database information, followed by \
 [ENTER]" 
 
-read answer 
+read command #take user input 
 
-    if [ ! "$command" == "Y" ] || [ ! "$command" == "y" ]; then
+if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
+        echo "exiting! You need to update your DB info or follow directions!"
         exit 187   
     fi 
 
 #kill gunicorn if running 
-pkill gunicorn 
+if [ "$(ps cax | grep gunicorn)" ]; then
+    pkill gunicorn
+fi
 
 # Activate the virtual environment
 cd $DJANGODIR
