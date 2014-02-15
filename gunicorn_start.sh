@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Author Jaren
+#Website www.jarenglover.com
+#Contact @GloveDotcom
+
 NAME="fuel_opendata"                            # Name of the application
 DJANGODIR=`pwd`
 SOCKFILE=${DJANGODIR}/run/gunicorn.conf  	    # we will communicte using this unix socket
@@ -11,7 +15,6 @@ DJANGO_WSGI_MODULE=opendata.wsgi                # WSGI module name
 LOGFILE=${DJANGODIR}/log/fuel.log		        # location of log file
 LOGDIR=$(dirname $LOGFILE)			            # location of log directory 
 VIRENV=$DJANGODIR/../env			            # you have to have the virtual env in the same director as your django dir
-API="tastypie"
 
 echo "Starting $NAME as `whoami`"
 
@@ -24,7 +27,7 @@ read command #take user input
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
         echo "exiting! You need to update your DB info or follow directions!"
         exit 187   
-    fi 
+fi 
 
 #kill gunicorn if running 
 if [ "$(ps cax | grep gunicorn)" ]; then
