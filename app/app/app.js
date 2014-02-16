@@ -1,8 +1,8 @@
 require('angular/angular');
 require('angular-route/angular-route');
 require('./bootstrap');
-var mainctrl = require('./mainctrl');
-var aboutctrl = require('./aboutctrl');
+var mainctrl = require('./mainctrl'),
+    aboutctrl = require('./aboutctrl');
 
 //Declare app level module and dependencies
 angular.module('sampleApp', [
@@ -14,10 +14,10 @@ angular.module('sampleApp', [
                 templateUrl: '/app/templates/home.html', 
                 controller: 'MainCtrl'
             })
-            .when('/about'), {
+            .when('/about', {
                  templateUrl: '/app/templates/about.html',
-                 controller:'AboutCtrl'
-            }
+                 controller: 'AboutCtrl'
+            })
             .otherwise( 
                 {
                     redirectTo: '/'
