@@ -14,7 +14,9 @@
     "grunt-contrib-uglify": "0.3.x",
     "grunt-contrib-clean": "0.5.x",
     "grunt-contrib-sass": "0.7.x",
-    "grunt-browserify-bower": "0.1.x"
+    "grunt-browserify-bower": "0.1.x",
+    "debowerify": "~0.5.2",
+    "deamdify": "~0.1.1"
   },
   "engines": {
     "node": "0.10.x"

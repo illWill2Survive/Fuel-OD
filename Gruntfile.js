@@ -24,12 +24,15 @@ module.exports = function(grunt) {
 			  dist: {
 			    files: {
 			      'app/js/app.js': ['app/app/*.js']
-			    }
+			    },
+                options: {
+                     transform: ['debowerify', 'deamdify']
+                }
 			  }
 			},
 			browserifyBower: {
 				options: {
-					file: './app/js/lib.js'
+					file: 'app/js/lib.js'
 				}
 			},
 			uglify: {
@@ -81,6 +84,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-browserify-bower');
+
 
 	grunt.registerTask('test', ['jshint']);
 	grunt.registerTask('default', ['clean','browserify','jshint', 'uglify', 'sass']);
