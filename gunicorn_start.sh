@@ -57,6 +57,6 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-level=debug \
   --log-file=$LOGFILE \
-  --config=$SOCKFILE 2>> $LOGFILE  
+  --config=$SOCKFILE 2>> $LOGFILE& 
 
 echo "script completed"
