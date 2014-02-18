@@ -30,8 +30,9 @@ if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
 fi 
 
 #kill gunicorn if running 
-if [ "$(ps cax | grep gunicorn)" ]; then
+if [[ ! -n $(ps cax | grep gunicorn) ]]; then
     pkill gunicorn
+    echo " Just killed the current running gunicorn process" 
 fi
 
 # Activate the virtual environment
@@ -47,6 +48,8 @@ test -d $LOGDIR || mkdir -p $LOGDIR
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
+echo "starting gunicorn for $NAME"
+
 exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --name $NAME \
   --workers $NUM_WORKERS \
@@ -55,3 +58,5 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-file=$LOGFILE \
   --config=$SOCKFILE 2>> $LOGFILE  
+
+echo "script completed"
