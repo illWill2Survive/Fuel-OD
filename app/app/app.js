@@ -8,7 +8,8 @@ var mainctrl = require('./mainctrl'),
 angular.module('sampleApp', [
     'ngRoute'
     ])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
                 templateUrl: '/app/templates/home.html', 
@@ -18,7 +19,7 @@ angular.module('sampleApp', [
                  templateUrl: '/app/templates/about.html',
                  controller: 'AboutCtrl'
             })
-            .otherwise( 
+            .otherwise(
                 {
                     redirectTo: '/'
                 });
