@@ -9,7 +9,7 @@ angular.module('sampleApp', [
     'ngRoute'
     ])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-        $locationProvider.html5Mode(true);
+       $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
                 templateUrl: '/app/templates/home.html', 
