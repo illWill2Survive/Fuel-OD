@@ -16,7 +16,9 @@
     "grunt-browserify-bower": "0.1.x",
     "debowerify": "~0.5.2",
     "deamdify": "~0.1.1",
-    "hbs": "~2.4.x"
+    "hbs": "2.4.x",
+    "consolidate": "0.10.x",
+    "claymate": "2.0.x"
   },
   "engines": {
     "node": "0.10.x"
