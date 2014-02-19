@@ -11,7 +11,8 @@
     "angular-route": "1.2.11",
     "bootstrap": "3.1.0",
     "angular-bootstrap": "0.10.0",
-    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#3.1.0"
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#3.1.0",
+    "gumby": "2.6.x"
   },
   "keywords": [
     "grunt",
