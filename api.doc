@@ -1,9 +1,27 @@
 API DOC coming soon like Lebron's next ring 
 Ex: +> http://www.twilio.com/docs/api/rest/sending-messages
 
-Request URI: /highway/:
+Request URI: /highway/
 Method: HTTP GET
 Parameters:
 Filters: 
 Example Request:
 Response:
+
+Request URI: /city/ 
+Method: HTTP GET
+Parameters:
+Filters: 
+Example Request:
+Response:
+
+
+Request URI: /you-save-spend/
+Method: HTTP GET
+Parameters:
+Filters: 
+Example Request:
+Response:
+
+
+
