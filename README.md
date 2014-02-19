@@ -85,6 +85,7 @@ $ python manage.py runserver 0.0.0.0:8732
 npm install -g grunt
 npm install -g grunt-cli
 npm install -g bower
+npm install -g claymate
 ```
 #### Install Node.js dependencies
 ```
