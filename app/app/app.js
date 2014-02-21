@@ -1,15 +1,17 @@
 require('angular/angular');
 require('angular-route/angular-route');
 require('./bootstrap');
-var mainctrl = require('./mainctrl'),
+var imagefact = require('./imagefact'),
+    mainctrl = require('./mainctrl'),
     aboutctrl = require('./aboutctrl');
+
 
 //Declare app level module and dependencies
 angular.module('sampleApp', [
     'ngRoute'
     ])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-       $locationProvider.html5Mode(true);
+       //$locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
                 templateUrl: '/app/templates/home.html', 
@@ -25,6 +27,9 @@ angular.module('sampleApp', [
                 });
     }]);
 
+//Load factories
+angular.module('sampleApp').factory('ImageFactory', ['$scope', imagefact.ImageFactory]);
+
 //Load controller(s)
 angular.module('sampleApp').controller('MainCtrl', ['$scope', mainctrl.MainController]);    
-angular.module('sampleApp').controller('AboutCtrl', ['$scope', aboutctrl.AboutController]);
+angular.module('sampleApp').controller('AboutCtrl', ['$scope', 'ImageFactory', aboutctrl.AboutController]);
