@@ -7,11 +7,8 @@
   ],
   "description": "An app using fuel data",
   "dependencies": {
-    "angular": "1.2.11",
-    "angular-route": "1.2.11",
-    "bootstrap": "3.1.0",
-    "angular-bootstrap": "0.10.0",
-    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#3.1.0",
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
     "gumby": "2.6.x"
   },
   "keywords": [
