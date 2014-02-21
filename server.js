@@ -1,5 +1,6 @@
 var express = require('express'),
     handlebars = require('hbs'),
+    consolidate = require('consolidate'),
     path = require('path'),
     routes = require('./app/routes'),
     app = express();
@@ -8,8 +9,8 @@ var express = require('express'),
 
 app.configure(function () {
     app.set('port', 8080);
-    app.set('view engine', 'html');
-    app.engine('html', handlebars.__express);
+    app.set('view engine', 'hbs');
+    app.engine('hbs', consolidate.handlebars);
     app.set('views', __dirname + '/app/templates');
     app.set('view options', {layout: false});
     app.use(express.logger());

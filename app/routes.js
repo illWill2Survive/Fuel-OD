@@ -2,9 +2,9 @@ var express = require('express'),
     app = express();
 
 exports.home = function(req, res) {
-  return res.render('index.html');
+  return res.render('home');
 };
 
 exports.about = function(req, res) {
-    return res.render('app/templates/about.html', req.data);
+    return res.render('about');
 };
