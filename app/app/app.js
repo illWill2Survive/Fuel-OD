@@ -28,7 +28,7 @@ angular.module('sampleApp', [
     }]);
 
 //Load factories
-angular.module('sampleApp').factory('ImageFactory', ['$scope', imagefact.ImageFactory]);
+angular.module('sampleApp').factory('ImageFactory', imagefact.ImageFactory);
 
 //Load controller(s)
 angular.module('sampleApp').controller('MainCtrl', ['$scope', mainctrl.MainController]);    
