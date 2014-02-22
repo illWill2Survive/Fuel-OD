@@ -37,7 +37,7 @@ source env/bin/activate
 #### Install Django dependencies and export settings
 ```
 # pip install -r requirement_file.txt
-$ export DJANGO_SETTINGS_MODULE='opendata.settings'
+export DJANGO_SETTINGS_MODULE='opendata.settings'
 ```
 ### set up node virtual env [P.S. take a while]
 ```
@@ -46,7 +46,7 @@ nodeenv -vp      # the '-p' allows for nodeeenv to be attached to your virtualen
 
 ### Database Setup
 ```
-$ vi opendata/settings.py
+vi opendata/settings.py
 ```
 #### Add security key
 ```
@@ -69,14 +69,20 @@ DATABASES = {
 ```
 #### Sync local DB & add open data from fueleconomy.gov
 ```
-$ python manage.py syncdb
-$ python manage.py shell < parseCSV.py
+python manage.py syncdb
+python manage.py shell < parseCSV.py
 ```
 
 Start django development server
 --
 ```
-$ python manage.py runserver 0.0.0.0:8732
+python manage.py runserver 0.0.0.0:8732
+```
+### gunicorn script
+I find it to be helpful script that will start your app server and logging. 
+```
+chmod +x gunicorn_start.sh
+./ gunicorn_start.sh 
 ```
 
 ## Node Setup:
