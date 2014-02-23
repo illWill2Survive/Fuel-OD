@@ -84,9 +84,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-browserify-bower');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
 
-	grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['browserify', 'uglify']);
 	grunt.registerTask('default', ['clean','browserify','jshint', 'uglify', 'sass']);
 };
