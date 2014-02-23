@@ -4,32 +4,41 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fuel</title>
-  <link rel="stylesheet" href="./bower_components/gumby/css/gumby.css" />
+  <title>Fuel - Open Data</title>
+  <link rel="stylesheet" href="./bower_components/gumby/css/gumby.css"/>
   <link href='http://fonts.googleapis.com/css?family=Fjord+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css"/>
+  <script src="./bower_components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<div class="row navbar flat" id="nav1">
-    <a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
-<div class="four columns">
-         <h4 class="logo-title"> Open Data- Fuel </h4>
-</div>
 
+<div class="navbar flat" id="nav1">
+  <div class="row">
+    <a class="toggle" data-gumby-trigger="#nav1 > .row > ul" href="#"><i class="icon-menu"></i></a>
+
+    <div class="four columns">
+      <a href="#">
+        <h4> Open Data- Fuel </h4>
+      </a>
+    </div>
     <ul class="eight columns">
-        <li><a href="/#/">Home</a></li>
-        <li><a href="/#/about">About</a></li>
-        <li><a href="#">Contact</a></li>
+      <li><a href="/#/">Home</a></li>
+      <li><a href="/#/about">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
+  </div>
 </div>
 
 <div class="row">
-    <div class="twelve columns">
-        <ng-view></ng-view>
-    </div>
+  <div class="twelve columns">
+    <ng-view></ng-view>
+  </div>
 </div>
 
-  <script src="./js/app.min.js"></script>
-  
+<script src="./bower_components/gumby/js/libs/jquery-2.0.2.min.js"></script>
+<script src="./bower_components/gumby/gumby.min.js"></script>
+<script src="./bower_components/gumby/js/plugins.js"></script>
+<script src="./bower_components/gumby/js/main.js"></script>
+<script src="./js/app.min.js"></script>
 </body>
 </html>

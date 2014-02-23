@@ -8,27 +8,27 @@ var imagefact = require('./imagefact'),
 
 //Declare app level module and dependencies
 angular.module('sampleApp', [
-    'ngRoute'
+        'ngRoute'
     ])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: '/app/templates/home.html', 
+                templateUrl: '/app/templates/home.html',
                 controller: 'MainCtrl'
             })
             .when('/about', {
-                 templateUrl: '/app/templates/about.html',
-                 controller: 'AboutCtrl'
+                templateUrl: '/app/templates/about.html',
+                controller: 'AboutCtrl'
             })
             .otherwise(
-                {
-                    redirectTo: '/'
-                });
+            {
+                redirectTo: '/'
+            });
     }]);
 
 //Load factories
 angular.module('sampleApp').factory('ImageFactory', imagefact.ImageFactory);
 
 //Load controller(s)
-angular.module('sampleApp').controller('MainCtrl', ['$scope', mainctrl.MainController]);    
+angular.module('sampleApp').controller('MainCtrl', ['$scope', mainctrl.MainController]);
 angular.module('sampleApp').controller('AboutCtrl', ['$scope', 'ImageFactory', aboutctrl.AboutController]);
