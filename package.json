@@ -1,28 +1,29 @@
 {
-  "name": "Fuel-OD",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "3.4.x",
-    "browserify": "3.19.x",
-    "bower": "1.2.x",
-    "grunt": "0.4.x",
-    "grunt-browserify": "1.3.x",
-    "grunt-contrib-jshint": "0.8.x",
-    "grunt-contrib-watch": "0.5.3",
-    "grunt-contrib-uglify": "0.3.x",
-    "grunt-contrib-clean": "0.5.x",
-    "grunt-contrib-sass": "0.7.x",
-    "grunt-browserify-bower": "0.1.x",
-    "debowerify": "~0.5.2",
-    "deamdify": "~0.1.1",
-    "hbs": "2.4.x",
-    "consolidate": "0.10.x",
-    "claymate": "2.0.x"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "scripts": {
-    "start": "node server.js"
-  }
+    "name": "Fuel-OD",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "3.4.x",
+        "browserify": "3.19.x",
+        "bower": "1.2.x",
+        "grunt": "0.4.x",
+        "grunt-browserify": "1.3.x",
+        "grunt-contrib-jshint": "0.8.x",
+        "grunt-contrib-watch": "0.5.3",
+        "grunt-contrib-uglify": "0.3.x",
+        "grunt-contrib-clean": "0.5.x",
+        "grunt-contrib-sass": "0.7.x",
+        "grunt-browserify-bower": "0.1.x",
+        "debowerify": "~0.5.2",
+        "deamdify": "~0.1.1",
+        "hbs": "2.4.x",
+        "consolidate": "0.10.x",
+        "claymate": "2.0.x",
+        "grunt-contrib-compass": "^0.7.2"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
 }
