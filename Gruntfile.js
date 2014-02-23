@@ -82,12 +82,16 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            sassDir: 'app/sass',
-            cssDir: 'app/css',
-            imagesDir: 'app/img',
-            outputStyle: 'compressed',
-            noLineComments: false
-
+            compile: {
+                options: {
+                    sassDir: 'app/sass',
+                    cssDir: 'app/css',
+                    imagesDir: 'app/img',
+                    outputStyle: 'compressed',
+                    httpPath: 'app',
+                    noLineComments: false
+                }
+            }
         },
         watch: {
             hint: {
