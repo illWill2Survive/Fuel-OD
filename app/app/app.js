@@ -10,8 +10,7 @@ var imagefact = require('./imagefact'),
 angular.module('sampleApp', [
     'ngRoute'
     ])
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-       //$locationProvider.html5Mode(true);
+    .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: '/app/templates/home.html', 

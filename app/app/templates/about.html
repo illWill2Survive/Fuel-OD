@@ -1,3 +1,18 @@
 <div class="row">
-    <h2>This site is made possible by the following open source technologies:</h2>
+  <h2>This site wouldn't be possible without these awesome open source technologies:</h2>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="logo-container">
+        <div data-ng-repeat="image in images">
+          <div class="two columns">
+            <div class="tech-logo">
+              <img data-ng-src="{{image}}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
