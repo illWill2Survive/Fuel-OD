@@ -65,22 +65,6 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        copy: {
-            gumbySass: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'app/bower_components/gumby/sass',
-                        src: ['**', '!_custom.scss'],
-                        dest: 'app/sass'
-                    }
-                ]
-            },
-            gumbyJs: {
-                files: [
-                ]
-            }
-        },
         compass: {
             compile: {
                 options: {
@@ -89,7 +73,8 @@ module.exports = function (grunt) {
                     imagesDir: 'app/img',
                     outputStyle: 'compressed',
                     httpPath: 'app',
-                    noLineComments: false
+                    noLineComments: false,
+                    require: ['modular-scale']
                 }
             }
         },
