@@ -1,22 +1,14 @@
 API DOC coming soon like Lebron's next ring 
 Ex: +> http://www.twilio.com/docs/api/rest/sending-messages
 
-Request URI: /highway/
+Request URI: /api/v1/highway/
 Method: HTTP GET
 Parameters:
 Filters: 
 Example Request:
 Response:
 
-Request URI: /city/ 
-Method: HTTP GET
-Parameters:
-Filters: 
-Example Request:
-Response:
-
-
-Request URI: /you-save-spend/
+Request URI: /api/v1/city/ 
 Method: HTTP GET
 Parameters:
 Filters: 
@@ -24,4 +16,16 @@ Example Request:
 Response:
 
 
+Request URI: /api/v1/you-save-spend/
+Method: HTTP GET
+Parameters:
+Filters: 
+Example Request:/api/v1/you-save-spend/?mode=Ford&year=2012
+Response:
 
+Request URI: /api/v1/cardata/
+Method: HTTP GET
+Parameters:
+Filters:
+Example Request:
+Response:
