@@ -5,13 +5,13 @@ from django.core import serializers
 from tastypie import fields, utils
 
 #filter data but problem will change later
-dataset= Vehicle.objects.filter(fuelType1 ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08 =0).exclude(UCity =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0')
+#dataset= Vehicle.objects.filter(fuelType1 ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08 =0).exclude(UCity =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0')
 
 
 class HighwayMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
-            queryset = dataset
+            queryset = Vehicle.objects.all()
             resource_name= 'highway'
             allowed_methods = ['get']
             include_resource_uri = False
@@ -22,7 +22,7 @@ class HighwayMPGResource(ModelResource):
 class CityMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UCity"]
-            queryset = dataset
+            queryset = Vehicle.objects.all()
             resource_name= 'city'
             allowed_methods = ['get']
             include_resource_uri = False
@@ -33,7 +33,7 @@ class CityMPGResource(ModelResource):
 class YouSaveSpendMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "youSaveSpend"]
-            queryset = dataset
+            queryset = Vehicle.objects.all()
             resource_name= 'you-save-spend'
             allowed_methods = ['get']
             include_resource_uri = False
@@ -50,15 +50,11 @@ class CarDataResource(ModelResource):
         allowed_methods = ['get']
         include_resource_uri = False
         include_absolute_url = False
-	ordering = ['make']
+        ordering = ['make']
 
 class MakeResource(ModelResource):
     class Meta:
-        queryset = Vehicle.objects.filter(fuelType1
-                ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08
-                        =0).exclude(UCity
-                                =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0').order_by('make')
-
+        queryset = Vehicle.objects.all()
         resource_name = 'make'
         allowed_methods = ['get']
         fields = ['make']
@@ -68,10 +64,7 @@ class MakeResource(ModelResource):
 
 class YearResource(ModelResource):
     class Meta:
-        queryset = Vehicle.objects.filter(fuelType1
-                ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08
-                        =0).exclude(UCity
-                                =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0').order_by('year')
+        queryset = Vehicle.objects.all()
         resource_name = 'year'
         allowed_methods = ['get']
         fields = ['year']
