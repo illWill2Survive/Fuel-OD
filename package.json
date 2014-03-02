@@ -13,13 +13,13 @@
         "grunt-contrib-clean": "0.5.x",
         "grunt-contrib-sass": "0.7.x",
         "grunt-browserify-bower": "0.1.x",
-        "debowerify": "~0.5.2",
-        "deamdify": "~0.1.1",
+        "debowerify": "0.5.x",
+        "deamdify": "0.1.x",
         "hbs": "2.4.x",
         "consolidate": "0.10.x",
         "claymate": "2.0.x",
-        "grunt-contrib-compass": "^0.7.2",
-        "grunt-contrib-copy": "^0.5.0"
+        "grunt-contrib-compass": "0.7.x",
+        "grunt-contrib-copy": "0.5.x"
     },
     "engines": {
         "node": "0.10.x"
