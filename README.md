@@ -118,6 +118,9 @@ gem install compass modular-scale sass
 ## Build tasks
 #### In node
 ```
+#
+grunt build 
+
 #compile css
 grunt sass
 
