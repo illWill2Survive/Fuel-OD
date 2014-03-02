@@ -4,20 +4,17 @@ from fuel.models import Vehicle
 from django.core import serializers
 from tastypie import fields, utils
 
-#filter data but problem will change later
-#dataset= Vehicle.objects.filter(fuelType1 ='Regular_Gasoline').filter(cylinders__lt=7).filter(year__gt=2011).filter(year__lt=2014).exclude(fuelCost08=0).exclude(highway08 =0).exclude(UCity =0).exclude(UHighway=0).exclude(youSaveSpend=0).exclude(fuelCostA08='0')
-
-
 class HighwayMPGResource(ModelResource):
         class Meta:
             fields =["make", "model", "year", "UHighway"]
             queryset = Vehicle.objects.all()
             resource_name= 'highway'
             allowed_methods = ['get']
-            include_resource_uri = False
             include_absolute_url = False
-            filtering ={'year': ALL}
+            include_resource_uri = False
             ordering = ['make']
+            filtering ={'year': ALL, "make":ALL, "model": ALL, "UHighway": ALL}
+		
 
 class CityMPGResource(ModelResource):
         class Meta:
@@ -27,8 +24,8 @@ class CityMPGResource(ModelResource):
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
-            filtering ={'year': ALL}
             ordering = ['make']
+            filtering ={'year': ALL, "make":ALL, "model": ALL, "UCity" : ALL}
 
 class YouSaveSpendMPGResource(ModelResource):
         class Meta:
@@ -38,7 +35,7 @@ class YouSaveSpendMPGResource(ModelResource):
             allowed_methods = ['get']
             include_resource_uri = False
             include_absolute_url = False
-            filtering ={'year': ALL}
+            filtering ={'year': ALL, "make":ALL, "model": ALL, "youSaveSpend": ALL}
             ordering = ['model']
 
 class CarDataResource(ModelResource):
@@ -51,6 +48,7 @@ class CarDataResource(ModelResource):
         include_resource_uri = False
         include_absolute_url = False
         ordering = ['make']
+        filtering ={'year': ALL, "make":ALL, "model": ALL, "youSaveSpend": ALL}
 
 class MakeResource(ModelResource):
     class Meta:
@@ -61,14 +59,15 @@ class MakeResource(ModelResource):
         include_resource_uri = False
         include_absolute_url = False
         ordering = ['make']
+        filtering ={"make":ALL}
 
 class YearResource(ModelResource):
     class Meta:
         queryset = Vehicle.objects.all()
+        fields = ['year']
         resource_name = 'year'
         allowed_methods = ['get']
-        fields = ['year']
         include_resource_uri = False
         include_absolute_url = False
         ordering = ['year']
-
+        filtering ={'year': ALL}
