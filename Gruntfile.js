@@ -48,23 +48,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        sass: {
-            dist: {
-                options: {
-                    style: 'expanded',
-                    lineNumbers: 'true'
-
-                },
-                files: [
-                    {
-                        expand: true,
-                        src: ['app/css/*.scss'],
-                        dest: './',
-                        ext: '.css'
-                    }
-                ]
-            }
-        },
         compass: {
             compile: {
                 options: {
