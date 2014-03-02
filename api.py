@@ -10,6 +10,7 @@ class HighwayMPGResource(ModelResource):
             queryset = Vehicle.objects.all()
             resource_name= 'highway'
             allowed_methods = ['get']
+            include_absolute_url = False
             include_resource_uri = False
             ordering = ['make']
             filtering ={'year': ALL, "make":ALL, "model": ALL, "UHighway": ALL}
@@ -63,6 +64,7 @@ class MakeResource(ModelResource):
 class YearResource(ModelResource):
     class Meta:
         queryset = Vehicle.objects.all()
+        fields = ['year']
         resource_name = 'year'
         allowed_methods = ['get']
         include_resource_uri = False
