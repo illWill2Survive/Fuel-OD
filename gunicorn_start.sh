@@ -60,3 +60,14 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --config=$SOCKFILE 2>> $LOGFILE& 
 
 echo "script completed"
+
+#check if rebuild CSS and js
+echo "Press 'Y' if you have rebuild CSS and JS, followed by \
+[ENTER]" 
+
+read command #take user input 
+
+if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
+    grunt build           
+fi 
+
