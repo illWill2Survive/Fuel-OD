@@ -112,7 +112,8 @@ npm start
 #### This project uses Sass, which has Ruby and Ruby gems as a requirement.
 #### After installing ruby and ruby gems you can use the following command to install Sass:
 ```
-gem install compass modular-scale sass
+gem install compass  sass
+gem install modular-scale -v 1.0.6
 ```
 
 ## Build tasks
