@@ -123,7 +123,7 @@ gem install modular-scale -v 1.0.6
 grunt build 
 
 #compile css
-grunt sass
+grunt compass
 
 #convert bower libraries to CommonJS modules
 grunt browserifyBower
