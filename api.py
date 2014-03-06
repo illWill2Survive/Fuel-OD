@@ -40,8 +40,7 @@ class YouSaveSpendMPGResource(ModelResource):
 
 class CarDataResource(ModelResource):
     class Meta:
-        model = Vehicle
-        fields = ('model','make', 'year', 'UHighway','UCity', 'youSaveSpend')
+        fields = ['model','make', 'year', 'UHighway','UCity', 'youSaveSpend']
         queryset = Vehicle.objects.all()
         resource_name = 'cardata'
         allowed_methods = ['get']
