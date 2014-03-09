@@ -31,7 +31,8 @@ fi
 
 #kill gunicorn if running 
 if [[ ! -n $(ps cax | grep gunicorn) ]]; then
-    pkill gunicorn
+    pkill gunicorn || {echo "pkill failed" ; exit 1}
+
     echo " Just killed the current running gunicorn process" 
 fi
 
@@ -57,9 +58,8 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-level=debug \
   --log-file=$LOGFILE \
-  --config=$SOCKFILE 2>> $LOGFILE& 
+  --config=$SOCKFILE 2>> $LOGFILE& || {echo "gunicorn failed" ; exit 1}
 
-echo "script completed"
 
 #check if rebuild CSS and js
 echo "Press 'Y' if you have rebuild CSS and JS, followed by \
@@ -68,6 +68,19 @@ echo "Press 'Y' if you have rebuild CSS and JS, followed by \
 read command #take user input 
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
-    grunt build           
+    grunt build  || {echo "grunt failed" ; exit 1}
+         
 fi 
 
+#ask to clear redis cache 
+echo "Press 'Y' if you want to clearn redis' cache, followed by \
+[ENTER]" 
+
+read command #take user input 
+
+if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
+    redis-cli FLUSHALL || {echo "redis failed" ; exit 1}
+  
+fi 
+
+echo "script completed"
