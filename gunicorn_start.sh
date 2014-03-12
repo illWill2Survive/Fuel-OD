@@ -58,7 +58,7 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-level=debug \
   --log-file=$LOGFILE \
-  --config=$SOCKFILE 2>> $LOGFILE& || {echo "gunicorn failed" ; exit 1}
+  --config=$SOCKFILE 2>> $LOGFILE 
 
 
 #check if rebuild CSS and js
