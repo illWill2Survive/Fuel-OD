@@ -4,8 +4,8 @@ import sys, traceback
 import psycopg2  # make sure you have psycopg is installed -- use pip
 import csv      #pretty sure this is default in Python
 
-connection_string ="dbname='fuel' user='illwill' host='localhost' port='5432' \
-                    password='1D@t@$0ur30fGr3@tn3$$4'"
+connection_string = ''
+                    
 def main():
     try:
         print "trap or die"
