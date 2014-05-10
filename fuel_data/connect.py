@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
 # I wrote this script to properly load data into my database
-# Author: Jaren Glover @GloveDotCom
-# 
+# Author: Jaren Glover @GloveDotCom 
 
 import sys, traceback
 import psycopg2  # make sure you have psycopg is installed -- use pip
