@@ -58,11 +58,11 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-level=debug \
   --log-file=$LOGFILE \
-  --config=$SOCKFILE 2>> $LOGFILE 
+  --config=$SOCKFILE #2>> $LOGFILE 
 
 
 #check if rebuild CSS and js
-echo "Press 'Y' if you have rebuild CSS and JS, followed by \
+echo "Press 'Y' if you DONT want to rebuild CSS and JS, followed by \
 [ENTER]" 
 
 read command #take user input 
@@ -80,13 +80,8 @@ read command #take user input
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
     redis-cli FLUSHALL || {echo "redis failed" ; exit 1}
-  
-fi 
-if nohup node server.js; then
-    print " node server was succesful started\n"
-else
-    print "ERROOR COUDLN\'t start node server"
-    exit 113 
+fi
 
+nohup node server.js || echo "ERRRRROR Couldn start node server" 
 
 echo "script completed"
