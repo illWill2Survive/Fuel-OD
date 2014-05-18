@@ -29,12 +29,15 @@ if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
         exit 187   
 fi 
 
-#kill gunicorn if running 
-if [[ ! -n $(ps cax | grep gunicorn) ]]; then
-    pkill gunicorn || {echo "pkill failed" ; exit 1}
+##kill gunicorn if running 
+#if [[ ! -n $(ps cax | grep gunicorn) ]]; then
+#    pkill gunicorn || {echo "pkill failed" ; exit 1}
+#
+#    echo " Just killed the current running gunicorn process" 
+#fi
 
-    echo " Just killed the current running gunicorn process" 
-fi
+echo "killing gunicorn process"
+pkill gunicorn
 
 # Activate the virtual environment
 cd $DJANGODIR
