@@ -72,7 +72,7 @@ echo "Press 'Y' if you DONT want to rebuild CSS and JS, followed by \
 read command #take user input 
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
-    grunt build  || {echo "grunt failed" ; exit 1}
+    grunt build  || (echo "grunt failed" ; exit 1)
          
 fi 
 
@@ -83,11 +83,11 @@ echo "Press 'Y' if you DONT want to clean redis' cache, followed by \
 read command #take user input 
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
-    redis-cli FLUSHALL || {echo "redis failed" ; exit 1}
+    redis-cli FLUSHALL || (echo "redis failed" ; exit 1)
 fi
 
 echo "trying to set up node server"
 
-nohup node server.js& || echo "ERRRRROR Couldn start node server" 
+(nohup node server.js&) || echo "ERRRRROR Couldn start node server" 
 
 echo "script completed"

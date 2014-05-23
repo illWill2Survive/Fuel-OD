@@ -111,3 +111,4 @@ STATIC_URL = '/static/'
 # Tastypie Setting
 API_LIMIT_PER_PAGE = 35 # I wanted to change the defult limit this instead of 20
 TASTYPIE_DEFAULT_FORMATS = ['json'] # force to default to json ...
+TASTYPIE_CANNED_ERROR = "you owt here thuggin so you don't need cable?"
