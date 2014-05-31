@@ -29,12 +29,15 @@ if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
         exit 187   
 fi 
 
-#kill gunicorn if running 
-if [[ ! -n $(ps cax | grep gunicorn) ]]; then
-    pkill gunicorn || {echo "pkill failed" ; exit 1}
+##kill gunicorn if running 
+#if [[ ! -n $(ps cax | grep gunicorn) ]]; then
+#    pkill gunicorn || {echo "pkill failed" ; exit 1}
+#
+#    echo " Just killed the current running gunicorn process" 
+#fi
 
-    echo " Just killed the current running gunicorn process" 
-fi
+echo "killing gunicorn process"
+pkill gunicorn
 
 # Activate the virtual environment
 cd $DJANGODIR
@@ -58,29 +61,33 @@ exec ${VIRENV}/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --log-level=debug \
   --log-level=debug \
   --log-file=$LOGFILE \
-  --config=$SOCKFILE 2>> $LOGFILE 
+  --config=$SOCKFILE&
 
+echo "gunicorn was exec but doesn't mean it won"
 
 #check if rebuild CSS and js
-echo "Press 'Y' if you have rebuild CSS and JS, followed by \
+echo "Press 'Y' if you DONT want to rebuild CSS and JS, followed by \
 [ENTER]" 
 
 read command #take user input 
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
-    grunt build  || {echo "grunt failed" ; exit 1}
+    grunt build  || (echo "grunt failed" ; exit 1)
          
 fi 
 
 #ask to clear redis cache 
-echo "Press 'Y' if you want to clearn redis' cache, followed by \
+echo "Press 'Y' if you DONT want to clean redis' cache, followed by \
 [ENTER]" 
 
 read command #take user input 
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
-    redis-cli FLUSHALL || {echo "redis failed" ; exit 1}
-  
-fi 
+    redis-cli FLUSHALL || (echo "redis failed" ; exit 1)
+fi
+
+echo "trying to set up node server"
+
+(nohup node server.js&) || echo "ERRRRROR Couldn start node server" 
 
 echo "script completed"
