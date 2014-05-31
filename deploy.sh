@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Author Jaren
+#Author Jaren G
 #Website www.jarenglover.com
 #Contact @GloveDotcom
 
@@ -29,15 +29,9 @@ if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
         exit 187   
 fi 
 
-##kill gunicorn if running 
-#if [[ ! -n $(ps cax | grep gunicorn) ]]; then
-#    pkill gunicorn || {echo "pkill failed" ; exit 1}
-#
-#    echo " Just killed the current running gunicorn process" 
-#fi
 
 echo "killing gunicorn process"
-pkill gunicorn
+(pkill gunicorn) || echo "ERRRRRR Couldn't stop gunicorn"
 
 # Activate the virtual environment
 cd $DJANGODIR
@@ -73,7 +67,6 @@ read command #take user input
 
 if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
     grunt build  || (echo "grunt failed" ; exit 1)
-         
 fi 
 
 #ask to clear redis cache 
@@ -86,8 +79,10 @@ if [ ! "$command" = "Y" ] && [ ! "$command" = "y" ]; then
     redis-cli FLUSHALL || (echo "redis failed" ; exit 1)
 fi
 
-echo "trying to set up node server"
+echo "stopping node server"
+(pkill node) || echo "ERRRRRR Couldn't stop node"
 
+echo "trying to set up node server"
 (nohup node server.js&) || echo "ERRRRROR Couldn start node server" 
 
 echo "script completed"
